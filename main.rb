@@ -9,7 +9,6 @@ arquivo = gets.chomp
 puts arquivo
 faculdade = leitor.le_arquivo(arquivo)
 
-start_time = Time.now
 for curso in faculdade.cursos
     carga_horaria_curso, total_nota_curso = curso.calcula_hora_e_notas
     crCurso = carga_horaria_curso == 0 ? 0 : total_nota_curso / carga_horaria_curso
@@ -20,6 +19,3 @@ for curso in faculdade.cursos
         puts "  Aluno: #{aluno.matricula} - CR: #{crAluno.round(2)}"
     end
 end
-end_time = Time.now
-elapsed_time = end_time - start_time
-puts "Tempo de cálculo: #{elapsed_time} segundos"
